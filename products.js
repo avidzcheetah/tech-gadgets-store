@@ -1,113 +1,204 @@
 // Product data - hardcoded as requested
 const products = [
+    
     {
         id: 1,
-        name: "Wireless Bluetooth Headphones",
-        price: 79.99,
+        name: "DJI Mini Drone",
+        price: 499.99,
         originalPrice: null,
         discount: null,
-        image: "🎧",
+        image: "🚁",
         isPromo: false
     },
     {
         id: 2,
-        name: "4K Webcam with Auto Focus",
-        price: 89.99,
-        originalPrice: 129.99,
-        discount: "31%",
-        image: "📹",
+        name: "Wireless Headset",
+        price: 79.99,
+        originalPrice: 109.99,
+        discount: "27%",
+        image: "🎧",
         isPromo: true
     },
     {
         id: 3,
-        name: "Gaming Mechanical Keyboard",
-        price: 149.99,
+        name: "ALFA WiFi Adapter",
+        price: 39.99,
+        originalPrice: null,
+        discount: null,
+        image: "📶",
+        isPromo: false
+    },
+    {
+        id: 4,
+        name: "M5 Stick C Plus",
+        price: 29.99,
+        originalPrice: 39.99,
+        discount: "25%",
+        image: "📟",
+        isPromo: true
+    },
+    {
+        id: 5,
+        name: "Flipper Zero",
+        price: 199.99,
+        originalPrice: null,
+        discount: null,
+        image: "🐬",
+        isPromo: false
+    },
+    {
+        id: 6,
+        name: "GoPro Hero Camera",
+        price: 299.99,
+        originalPrice: 399.99,
+        discount: "25%",
+        image: "📷",
+        isPromo: true
+    },
+    {
+        id: 7,
+        name: "Portable Power Bank",
+        price: 49.99,
+        originalPrice: null,
+        discount: null,
+        image: "🔋",
+        isPromo: false
+    },
+    {
+        id: 8,
+        name: "USB-C Dongle",
+        price: 25.99,
+        originalPrice: null,
+        discount: null,
+        image: "🔌",
+        isPromo: false
+    },
+    {
+        id: 9,
+        name: "RGB Gaming Keyboard",
+        price: 89.99,
         originalPrice: null,
         discount: null,
         image: "⌨️",
         isPromo: false
     },
     {
-        id: 4,
-        name: "Wireless Charging Pad",
-        price: 24.99,
-        originalPrice: 39.99,
-        discount: "38%",
-        image: "🔌",
-        isPromo: true
-    },
-    {
-        id: 5,
-        name: "Smart Fitness Watch",
-        price: 199.99,
-        originalPrice: null,
-        discount: null,
-        image: "⌚",
-        isPromo: false
-    },
-    {
-        id: 6,
-        name: "Portable Power Bank 20000mAh",
-        price: 34.99,
-        originalPrice: 49.99,
-        discount: "30%",
-        image: "🔋",
-        isPromo: true
-    },
-    {
-        id: 7,
-        name: "USB-C Hub Multi-Port Adapter",
-        price: 45.99,
-        originalPrice: null,
-        discount: null,
-        image: "🔌",
-        isPromo: false
-    },
-    {
-        id: 8,
+        id: 10,
         name: "Wireless Gaming Mouse",
-        price: 69.99,
+        price: 59.99,
         originalPrice: null,
         discount: null,
         image: "🖱️",
         isPromo: false
     },
     {
-        id: 9,
-        name: "Smartphone Camera Lens Kit",
-        price: 29.99,
-        originalPrice: null,
-        discount: null,
-        image: "📱",
-        isPromo: false
-    },
-    {
-        id: 10,
-        name: "Bluetooth Portable Speaker",
-        price: 55.99,
-        originalPrice: null,
-        discount: null,
-        image: "🔊",
-        isPromo: false
-    },
-    {
         id: 11,
-        name: "Tablet Stand Adjustable",
-        price: 19.99,
+        name: "USB Rubber Ducky",
+        price: 44.99,
         originalPrice: null,
         discount: null,
-        image: "📱",
+        image: "🪛",
         isPromo: false
     },
     {
         id: 12,
-        name: "LED Ring Light for Streaming",
-        price: 39.99,
+        name: "WiFi Pineapple",
+        price: 129.99,
         originalPrice: null,
         discount: null,
-        image: "💡",
+        image: "🍍",
         isPromo: false
-    }
+    },
+    {
+        id: 13,
+        name: "Raspberry Pi 4 Model B",
+        price: 59.99,
+        originalPrice: null,
+        discount: null,
+        image: "🍓",
+        isPromo: false
+    },
+    {
+        id: 14,
+        name: "ESP32 Development Board",
+        price: 19.99,
+        originalPrice: null,
+        discount: null,
+        image: "🔧",
+        isPromo: false
+    },
+    {
+        id: 15,
+        name: "Arduino Uno R3",
+        price: 27.99,
+        originalPrice: 34.99,
+        discount: "20%",
+        image: "🔌",
+        isPromo: true
+    },
+    {
+        id: 16,
+        name: "USB Logic Analyzer",
+        price: 14.99,
+        originalPrice: null,
+        discount: null,
+        image: "📊",
+        isPromo: false
+    },
+    {
+        id: 17,
+        name: "HackRF One SDR",
+        price: 299.99,
+        originalPrice: null,
+        discount: null,
+        image: "📻",
+        isPromo: false
+    },
+    {
+        id: 18,
+        name: "Mechanical Keypad",
+        price: 39.99,
+        originalPrice: 49.99,
+        discount: "20%",
+        image: "🎮",
+        isPromo: true
+    },
+    {
+        id: 19,
+        name: "Webcam Cover Slide",
+        price: 6.99,
+        originalPrice: null,
+        discount: null,
+        image: "📷",
+        isPromo: false
+    },
+    {
+        id: 20,
+        name: "USB Kill Stick",
+        price: 89.99,
+        originalPrice: 109.99,
+        discount: "18%",
+        image: "⚡",
+        isPromo: true
+    },
+    {
+        id: 21,
+        name: "Digital Multimeter",
+        price: 24.99,
+        originalPrice: null,
+        discount: null,
+        image: "🔍",
+        isPromo: false
+    },
+    {
+        id: 22,
+        name: "Keylogger USB Device",
+        price: 49.99,
+        originalPrice: null,
+        discount: null,
+        image: "🛡️",
+        isPromo: false
+    }    
 ];
 
 // Get promotional products (products with discounts)
