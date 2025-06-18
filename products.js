@@ -61,16 +61,16 @@ const products = [
         price: 49.99,
         originalPrice: null,
         discount: null,
-        image: "🔋",
+        image: "images/power.png",
         isPromo: false
     },
     {
         id: 8,
-        name: "USB-C Dongle",
+        name: "USB-C Hub",
         price: 25.99,
         originalPrice: null,
         discount: null,
-        image: "🔌",
+        image: "images/hub.png",
         isPromo: false
     },
     {
@@ -79,7 +79,7 @@ const products = [
         price: 89.99,
         originalPrice: null,
         discount: null,
-        image: "⌨️",
+        image: "images/keyboard.png",
         isPromo: false
     },
     {
@@ -88,7 +88,7 @@ const products = [
         price: 59.99,
         originalPrice: null,
         discount: null,
-        image: "🖱️",
+        image: "images/mouse.jpeg",
         isPromo: false
     },
     {
@@ -97,7 +97,7 @@ const products = [
         price: 44.99,
         originalPrice: null,
         discount: null,
-        image: "🪛",
+        image: "images/ducky.jpg",
         isPromo: false
     },
     {
@@ -106,7 +106,7 @@ const products = [
         price: 129.99,
         originalPrice: null,
         discount: null,
-        image: "🍍",
+        image: "images/pineapple.png",
         isPromo: false
     },
     {
@@ -115,7 +115,7 @@ const products = [
         price: 59.99,
         originalPrice: null,
         discount: null,
-        image: "🍓",
+        image: "images/pi.png",
         isPromo: false
     },
     {
@@ -124,7 +124,7 @@ const products = [
         price: 19.99,
         originalPrice: null,
         discount: null,
-        image: "🔧",
+        image: "images/esp32.jpg",
         isPromo: false
     },
     {
@@ -133,16 +133,16 @@ const products = [
         price: 27.99,
         originalPrice: 34.99,
         discount: "20%",
-        image: "🔌",
+        image: "images/uno.jpg",
         isPromo: true
     },
     {
         id: 16,
-        name: "USB Logic Analyzer",
-        price: 14.99,
+        name: "Skydio X2D Drone",
+        price: 90910.99,
         originalPrice: null,
         discount: null,
-        image: "📊",
+        image: "images/skydio.png",
         isPromo: false
     },
     {
@@ -151,16 +151,16 @@ const products = [
         price: 299.99,
         originalPrice: null,
         discount: null,
-        image: "📻",
+        image: "images/hackrf.png",
         isPromo: false
     },
     {
         id: 18,
-        name: "Mechanical Keypad",
+        name: "12W Wireless Charger",
         price: 39.99,
         originalPrice: 49.99,
         discount: "20%",
-        image: "🎮",
+        image: "images/wirelesscg.png",
         isPromo: true
     },
     {
@@ -169,7 +169,7 @@ const products = [
         price: 6.99,
         originalPrice: null,
         discount: null,
-        image: "📷",
+        image: "images/camcover.png",
         isPromo: false
     },
     {
@@ -178,27 +178,18 @@ const products = [
         price: 89.99,
         originalPrice: 109.99,
         discount: "18%",
-        image: "⚡",
+        image: "images/usbkill.jpg",
         isPromo: true
     },
     {
         id: 21,
-        name: "Digital Multimeter",
-        price: 24.99,
+        name: "Modio ME16 Earbuds",
+        price: 25.99,
         originalPrice: null,
         discount: null,
-        image: "🔍",
+        image: "images/earbuds.png",
         isPromo: false
-    },
-    {
-        id: 22,
-        name: "Keylogger USB Device",
-        price: 49.99,
-        originalPrice: null,
-        discount: null,
-        image: "🛡️",
-        isPromo: false
-    }    
+    }
 ];
 
 // Get promotional products (products with discounts)
