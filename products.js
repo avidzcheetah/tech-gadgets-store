@@ -7,7 +7,7 @@ const products = [
         price: 499.99,
         originalPrice: null,
         discount: null,
-        image: "🚁",
+        image: "images/djidrone.png",
         isPromo: false
     },
     {
@@ -16,7 +16,7 @@ const products = [
         price: 79.99,
         originalPrice: 109.99,
         discount: "27%",
-        image: "🎧",
+        image: "images/headset.png",
         isPromo: true
     },
     {
@@ -25,7 +25,7 @@ const products = [
         price: 39.99,
         originalPrice: null,
         discount: null,
-        image: "📶",
+        image: "images/alfawifi.jpg",
         isPromo: false
     },
     {
@@ -34,7 +34,7 @@ const products = [
         price: 29.99,
         originalPrice: 39.99,
         discount: "25%",
-        image: "📟",
+        image: "images/m5stick.jpeg",
         isPromo: true
     },
     {
@@ -43,7 +43,7 @@ const products = [
         price: 199.99,
         originalPrice: null,
         discount: null,
-        image: "🐬",
+        image: "images/flipper.png",
         isPromo: false
     },
     {
@@ -52,7 +52,7 @@ const products = [
         price: 299.99,
         originalPrice: 399.99,
         discount: "25%",
-        image: "📷",
+        image: "images/gopro.jpg",
         isPromo: true
     },
     {
@@ -246,7 +246,9 @@ function createProductCard(product) {
     return `
         <div class="product-card" data-product-id="${product.id}">
             ${discountBadge}
-            <div class="product-image">${product.image}</div>
+            <div class="product-image">
+                <img src="${product.image}" alt="Product Image">
+            </div>
             <div class="product-info">
                 <div class="product-name">${product.name}</div>
                 ${priceDisplay}

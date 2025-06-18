@@ -1,7 +1,5 @@
-// Shopping cart functionality
 let cart = [];
 
-// Add item to cart
 function addToCart(productId) {
     const product = getProductById(productId);
     if (!product) return;
@@ -24,13 +22,11 @@ function addToCart(productId) {
     showCartAnimation();
 }
 
-// Remove item from cart
 function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId);
     updateCartUI();
 }
 
-// Update item quantity
 function updateQuantity(productId, newQuantity) {
     if (newQuantity <= 0) {
         removeFromCart(productId);
@@ -44,17 +40,14 @@ function updateQuantity(productId, newQuantity) {
     }
 }
 
-// Get cart total
 function getCartTotal() {
     return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 }
 
-// Get cart item count
 function getCartItemCount() {
     return cart.reduce((count, item) => count + item.quantity, 0);
 }
 
-// Update cart UI elements
 function updateCartUI() {
     updateCartCount();
     updateCartItems();
@@ -62,7 +55,6 @@ function updateCartUI() {
     updateCheckoutButton();
 }
 
-// Update cart count badge
 function updateCartCount() {
     const cartCount = document.getElementById('cartCount');
     const count = getCartItemCount();
@@ -70,7 +62,6 @@ function updateCartCount() {
     cartCount.style.display = count > 0 ? 'flex' : 'none';
 }
 
-// Update cart items display
 function updateCartItems() {
     const cartItems = document.getElementById('cartItems');
     
@@ -103,20 +94,17 @@ function updateCartItems() {
     `).join('');
 }
 
-// Update cart total display
 function updateCartTotal() {
     const cartTotal = document.getElementById('cartTotal');
     cartTotal.textContent = formatPrice(getCartTotal());
 }
 
-// Update checkout button state
 function updateCheckoutButton() {
     const checkoutBtn = document.getElementById('checkoutBtn');
     checkoutBtn.disabled = cart.length === 0;
     checkoutBtn.textContent = cart.length === 0 ? 'Cart is Empty' : 'Proceed to Checkout';
 }
 
-// Show cart animation when item added
 function showCartAnimation() {
     const cartIcon = document.getElementById('cartIcon');
     cartIcon.style.transform = 'scale(1.2)';
@@ -125,13 +113,11 @@ function showCartAnimation() {
     }, 200);
 }
 
-// Clear cart
 function clearCart() {
     cart = [];
     updateCartUI();
 }
 
-// Get cart contents for checkout
 function getCartForCheckout() {
     return cart.map(item => ({
         name: item.name,

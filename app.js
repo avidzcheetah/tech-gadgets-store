@@ -1,19 +1,15 @@
-// Main application logic
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
     setupEventListeners();
 });
 
-// Initialize the application
 function initializeApp() {
     displayPromotionalProducts();
     displayAllProducts();
     updateCartUI();
 }
 
-// Setup all event listeners
 function setupEventListeners() {
-    // Search functionality
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.querySelector('.search-btn');
     
@@ -25,7 +21,6 @@ function setupEventListeners() {
         }
     });
     
-    // Cart sidebar toggle
     const cartIcon = document.getElementById('cartIcon');
     const cartSidebar = document.getElementById('cartSidebar');
     const closeCart = document.getElementById('closeCart');
@@ -37,15 +32,13 @@ function setupEventListeners() {
     closeCart.addEventListener('click', () => {
         cartSidebar.classList.remove('open');
     });
-    
-    // Close cart when clicking outside
+
     document.addEventListener('click', function(e) {
         if (!cartSidebar.contains(e.target) && !cartIcon.contains(e.target)) {
             cartSidebar.classList.remove('open');
         }
     });
-    
-    // Checkout modal
+
     const checkoutBtn = document.getElementById('checkoutBtn');
     const checkoutModal = document.getElementById('checkoutModal');
     const closeModal = document.getElementById('closeModal');
@@ -53,11 +46,9 @@ function setupEventListeners() {
     checkoutBtn.addEventListener('click', openCheckoutModal);
     closeModal.addEventListener('click', closeCheckoutModal);
     
-    // Checkout form submission
     const checkoutForm = document.getElementById('checkoutForm');
     checkoutForm.addEventListener('submit', handleCheckout);
     
-    // Success modal
     const successModal = document.getElementById('successModal');
     const closeSuccessModal = document.getElementById('closeSuccessModal');
     const continueShoppingBtn = document.getElementById('continueShoppingBtn');
@@ -68,7 +59,6 @@ function setupEventListeners() {
         cartSidebar.classList.remove('open');
     });
     
-    // Close modals when clicking overlay
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
         overlay.addEventListener('click', function(e) {
             if (e.target === overlay) {
@@ -78,7 +68,6 @@ function setupEventListeners() {
     });
 }
 
-// Display promotional products
 function displayPromotionalProducts() {
     const promoGrid = document.getElementById('promoGrid');
     const promoProducts = getPromotionalProducts();
@@ -86,7 +75,6 @@ function displayPromotionalProducts() {
     promoGrid.innerHTML = promoProducts.map(product => createProductCard(product)).join('');
 }
 
-// Display all products
 function displayAllProducts() {
     const productsGrid = document.getElementById('productsGrid');
     const allProducts = getAllProducts();
@@ -94,7 +82,6 @@ function displayAllProducts() {
     productsGrid.innerHTML = allProducts.map(product => createProductCard(product)).join('');
 }
 
-// Handle search functionality
 function handleSearch() {
     const searchInput = document.getElementById('searchInput');
     const query = searchInput.value.trim();
@@ -113,8 +100,7 @@ function handleSearch() {
     } else {
         productsGrid.innerHTML = searchResults.map(product => createProductCard(product)).join('');
     }
-    
-    // Update section title based on search
+
     const productsSection = document.querySelector('.products-section h2');
     if (query) {
         productsSection.textContent = `Search Results for "${query}"`;
@@ -123,7 +109,6 @@ function handleSearch() {
     }
 }
 
-// Open checkout modal
 function openCheckoutModal() {
     if (cart.length === 0) return;
     
@@ -131,19 +116,16 @@ function openCheckoutModal() {
     updateOrderSummary();
     checkoutModal.classList.add('show');
     
-    // Focus first input
     setTimeout(() => {
         document.getElementById('customerName').focus();
     }, 300);
 }
 
-// Close checkout modal
 function closeCheckoutModal() {
     const checkoutModal = document.getElementById('checkoutModal');
     checkoutModal.classList.remove('show');
 }
 
-// Update order summary in checkout modal
 function updateOrderSummary() {
     const summaryItems = document.getElementById('summaryItems');
     const summaryTotal = document.getElementById('summaryTotal');
@@ -160,7 +142,6 @@ function updateOrderSummary() {
     summaryTotal.textContent = formatPrice(getCartTotal());
 }
 
-// Handle checkout form submission
 function handleCheckout(e) {
     e.preventDefault();
     
@@ -170,7 +151,7 @@ function handleCheckout(e) {
     const customerAddress = document.getElementById('customerAddress').value;
     const customerPhone = document.getElementById('customerPhone').value;
     
-    // Basic form validation
+
     if (!customerName || !customerEmail || !customerAddress) {
         alert('Please fill in all required fields.');
         return;
@@ -187,17 +168,14 @@ function handleCheckout(e) {
     simulateOrderProcessing();
 }
 
-// Simulate order processing and show success
 function simulateOrderProcessing() {
     const checkoutModal = document.getElementById('checkoutModal');
     const successModal = document.getElementById('successModal');
     const orderNumber = document.getElementById('orderNumber');
     
-    // Generate random order number
     const orderId = 'TZ' + Date.now().toString().slice(-6);
     orderNumber.textContent = orderId;
     
-    // Show loading state
     const submitBtn = document.querySelector('.submit-order-btn');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Processing...';
@@ -223,21 +201,17 @@ function simulateOrderProcessing() {
     }, 2000);
 }
 
-// Close success modal
 function closeSuccessModalHandler() {
     const successModal = document.getElementById('successModal');
     successModal.classList.remove('show');
 }
 
-// Utility function to show notifications (could be enhanced)
+
 function showNotification(message, type = 'success') {
-    // Simple alert for now - could be enhanced with custom notifications
     console.log(`${type.toUpperCase()}: ${message}`);
 }
 
-// Handle keyboard navigation and accessibility
 document.addEventListener('keydown', function(e) {
-    // Close modals with Escape key
     if (e.key === 'Escape') {
         document.querySelectorAll('.modal-overlay.show').forEach(modal => {
             modal.classList.remove('show');
@@ -249,7 +223,6 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Add smooth scrolling to page navigation
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -257,7 +230,6 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Performance optimization: Debounce search input
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -270,10 +242,8 @@ function debounce(func, wait) {
     };
 }
 
-// Apply debounce to search
 const debouncedSearch = debounce(handleSearch, 300);
 
-// Update search event listener to use debounced version
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
